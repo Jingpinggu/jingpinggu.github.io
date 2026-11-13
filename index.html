@@ -1,119 +1,280 @@
-
-
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta http-equiv="Content-Language" content="en-us">
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
-<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
-<meta name="ProgId" content="FrontPage.Editor.Document">
-<base target="_parent">
-<meta name="Microsoft Theme" content="new-profile 011">
-<meta name="Microsoft Border" content="none, default">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jingping Gu</title>
+<meta name="description" content="Jingping Gu, Associate Professor of Economics, Sam M. Walton College of Business, University of Arkansas.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  /* Layout idea: a narrow labelled column (section names on the left, content on the right),
+     like the margins of an academic CV. Cardinal accent used only for links and rules. */
+  :root {
+    --bg: #fbfbfc;
+    --surface: #ffffff;
+    --ink: #1c1f24;
+    --muted: #5b626d;
+    --rule: #dfe2e7;
+    --accent: #9d2235;
+    --accent-soft: #f6e9eb;
+    --display: "Source Serif 4", Georgia, "Times New Roman", serif;
+    --body: "IBM Plex Sans", "Segoe UI", Helvetica, Arial, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      color-scheme: dark;
+      --bg: #15171b;
+      --surface: #1c1f25;
+      --ink: #e9ebee;
+      --muted: #a2a9b4;
+      --rule: #30353d;
+      --accent: #ee8997;
+      --accent-soft: #33202a;
+    }
+  }
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --bg: #15171b;
+    --surface: #1c1f25;
+    --ink: #e9ebee;
+    --muted: #a2a9b4;
+    --rule: #30353d;
+    --accent: #ee8997;
+    --accent-soft: #33202a;
+  }
 
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--body);
+    font-size: 17px;
+    line-height: 1.65;
+  }
+  a { color: var(--accent); text-underline-offset: 3px; }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+  img { max-width: 100%; }
 
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  .wrap { max-width: 920px; margin: 0 auto; padding: 0 24px; }
 
-  ga('create', 'UA-57220489-1', 'auto');
-  ga('send', 'pageview');
+  /* Top bar */
+  .topbar {
+    position: sticky; top: 0; z-index: 5;
+    background: var(--bg);
+    border-bottom: 1px solid var(--rule);
+  }
+  .topbar .wrap {
+    display: flex; flex-wrap: wrap; align-items: baseline;
+    justify-content: space-between; gap: 6px 24px;
+    padding-top: 14px; padding-bottom: 14px;
+  }
+  .brand {
+    font-family: var(--display); font-weight: 600; font-size: 1.1rem;
+    color: var(--ink); text-decoration: none;
+  }
+  nav { display: flex; flex-wrap: wrap; gap: 4px 22px; }
+  nav a {
+    font-size: 0.93rem; font-weight: 500; color: var(--muted); text-decoration: none;
+    padding: 2px 0; border-bottom: 2px solid transparent;
+  }
+  nav a:hover { color: var(--accent); border-bottom-color: var(--accent); }
 
-</script>
+  /* Header */
+  .intro {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 32px 40px;
+    padding: 56px 0 48px;
+  }
+  .portrait {
+    width: 168px; height: 168px; flex: none;
+    border-radius: 50%; overflow: hidden;
+    background: var(--accent-soft);
+    display: grid; place-items: center;
+    font-family: var(--display); font-size: 3rem; font-weight: 600; color: var(--accent);
+  }
+  .portrait img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .intro-text { flex: 1 1 320px; }
+  h1 {
+    font-family: var(--display); font-weight: 600;
+    font-size: clamp(2.1rem, 5vw, 2.9rem); line-height: 1.1;
+    margin: 0 0 10px; text-wrap: balance;
+  }
+  .role { font-size: 1.12rem; font-weight: 500; margin: 0; }
+  .affil { color: var(--muted); margin: 2px 0 0; }
 
+  /* Sections: label column + content column */
+  section {
+    display: grid; grid-template-columns: 170px 1fr; gap: 12px 40px;
+    padding: 36px 0; border-top: 1px solid var(--rule);
+    scroll-margin-top: 64px;
+  }
+  h2 {
+    font-family: var(--body); font-size: 0.8rem; font-weight: 600;
+    letter-spacing: 0.09em; text-transform: uppercase;
+    color: var(--accent); margin: 6px 0 0;
+  }
+  .content { max-width: 64ch; }
+  .content p { margin: 0 0 14px; }
+  .content p:last-child { margin-bottom: 0; }
 
+  .tags { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+  .tags li {
+    border: 1px solid var(--rule); background: var(--surface);
+    padding: 4px 12px; border-radius: 4px; font-size: 0.95rem;
+  }
+  h3 { font-family: var(--display); font-weight: 600; font-size: 1.15rem; margin: 26px 0 10px; }
+
+  ol.pubs, ul.plain { margin: 0; padding: 0; list-style: none; display: grid; gap: 16px; }
+  ol.pubs li { display: grid; grid-template-columns: 3.2em 1fr; gap: 0 8px; }
+  ol.pubs .yr { color: var(--muted); font-variant-numeric: tabular-nums; font-size: 0.93rem; padding-top: 1px; }
+  .pub-title { font-weight: 500; display: block; }
+  .pub-meta { color: var(--muted); font-size: 0.95rem; display: block; }
+  .pub-meta em { color: var(--ink); }
+  .badge {
+    display: inline-block; margin-top: 4px; padding: 1px 9px; border-radius: 4px;
+    background: var(--accent-soft); color: var(--accent); font-size: 0.82rem; font-weight: 500;
+  }
+  ul.plain.tight { gap: 8px; }
+  ul.awards { margin: 0; padding: 0; list-style: none; display: grid; gap: 10px; }
+  ul.awards li { display: grid; grid-template-columns: 5.6em 1fr; gap: 0 8px; }
+  ul.awards .yr { color: var(--muted); font-variant-numeric: tabular-nums; font-size: 0.93rem; padding-top: 1px; }
+  .sub { color: var(--muted); font-size: 0.95rem; }
+
+  .button {
+    display: inline-block; padding: 9px 18px; border-radius: 4px;
+    background: var(--accent); color: var(--bg); font-weight: 500; text-decoration: none;
+  }
+  .button:hover { filter: brightness(1.1); }
+
+  dl.contact { margin: 0; display: grid; grid-template-columns: max-content 1fr; gap: 8px 24px; }
+  dl.contact dt { color: var(--muted); }
+  dl.contact dd { margin: 0; font-variant-numeric: tabular-nums; }
+
+  footer { border-top: 1px solid var(--rule); padding: 24px 0 48px; color: var(--muted); font-size: 0.88rem; }
+
+  @media (max-width: 640px) {
+    section { grid-template-columns: 1fr; padding: 28px 0; }
+    .intro { padding: 36px 0 32px; }
+    .portrait { width: 128px; height: 128px; }
+  }
+</style>
 </head>
-<title>Gu, Jingping</title>
+<body>
 
-
-
-<body leftmargin="30" background="_themes/new-profile/probkgnd.gif" bgcolor="#FFFFFF" text="#000000" link="#CC6666" vlink="#999999" alink="#996699"><!--mstheme--><font face="����">
-
-<div align="center">
-  <!--mstheme--></font><table border="0" width="90%" cellspacing="0" height="1" style="border-collapse: collapse; border: 1 double #666666; padding-top: 0; padding-bottom: 0.1" cellpadding="0">
-    <tr>
-      <td width="156%" height="17" bordercolor="#FFFFFF" bordercolorlight="#FFFFFF" bordercolordark="#FFFFFF" colspan="3" bgcolor="#800000"><!--mstheme--><font face="����">
-        <p align="right"><b><font face="Andalus" color="#FFFFFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   
-        <font size="3">Economics Department, University of Arkansas&nbsp; </font></font></b></p>  
-      <!--mstheme--></font></td>     
-    </tr>
-  <center>
-    <tr>
-      <td width="19%" height="115" bordercolor="#FFFFFF" bordercolorlight="#FFFFFF" bordercolordark="#FFFFFF"><!--mstheme--><font face="����">
-        <p style="word-spacing: 0; line-height: 100%; margin-top: 0; margin-bottom: 0"><img border="0" src="images/gu_3.jpg" width="195" height="211"></p>
-      <!--mstheme--></font></td>
-  </center>
-      <td width="88%" height="115" bordercolor="#FFFFFF" bordercolorlight="#FFFFFF" bordercolordark="#FFFFFF"><!--mstheme--><font face="����">
-        <p style="word-spacing: 0; line-height: 100%; margin-top: 9; margin-bottom: 9"><b><font face="Garamond" size="5">Jingping 
-        GU</font></b></p>
-        <p style="word-spacing: 0; line-height: 100%; margin-top: 2; margin-bottom: 2"><b><font face="Garamond" size="3">Associate Professor</font></b></p>
-        <p style="line-height: 100%; margin: 0"><b><font face="Garamond" size="3">Economics 
-        Department</font></b></p>
-<p style="line-height: 100%; margin: 0"><b><font face="Garamond" size="3">Sam M. Walton College of Business </font></b></p>
-
-        <p style="line-height: 100%; margin: 0"><b><font face="Garamond" size="3">University of Arkansas</font></b></p> 
-
-
-
-        <p style="line-height: 100%; margin: 0"></p>
-    
-    <p style="margin-top: 0; margin-bottom: 3"><font face="Garamond" size="3"><b>Office:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;       (479)575-6621 </b></font>
-    <p style="margin-top: 0; margin-bottom: 3"><font face="Garamond" size="3"><b>Email:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-    <a href="mailto:jgu@walton.uark.edu">jgu@walton.uark.edu</a></b></font>
-    <p style="margin-top: 0; margin-bottom: 3"><font face="Garamond" size="3"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="mailto:jgu@uark.edu">jgu@uark.edu</a></b></font> <!--mstheme--></font></td>
-    </tr>
-  <center>
-    <tr>
-      <td width="156%" height="27" bordercolor="#800000" bordercolorlight="#FFFFFF" bordercolordark="#FFFFFF" colspan="2" style="border-left-width: 1; border-right-width: 1; border-top: 2 solid #800000; border-bottom: 1 solid #800000"><!--mstheme--><font face="����">
-        <p style="margin-top: 4; margin-bottom: 4">
-        <b>
-<img border="0" src="images/img04.gif" width="12" height="12"> 
- Home | <a href="Gu_CV.pdf">Curriculum Vitae</a> | <a href="teaching.htm">Teaching</a> | <a href="research.htm">Research</a> | <a href="contact.htm">Contact</a>   </b></p>
-      <!--mstheme--></font></td>
-    </tr>
-    <tr>
-
-
-
-      <td width="156%" height="143" bordercolorlight="#FFFFFF" bordercolordark="#FFFFFF" colspan="2"><!--mstheme--><font face="����">
-    <p style="margin-left: 5; margin-top: 2"></p> 
-    <p style="margin-left: 5; margin-top: 2"><font size="3" face="Garamond"><b>Welcome to my        
-    homepage!</b></font></p> 
-    <p class="main_text" style="margin-left: 5; margin-top: 2">
-    <font size="3" face="Garamond"><b>I am an associate professor in the<a href="http://waltoncollege.uark.edu/econ/default.asp">    
-  Department of Economics</a> at <a href="https://waltoncollege.uark.edu/">Sam M. Walton College of Business</a>, <a href="https://www.uark.edu/home/">    
-  University of Arkansas</a>. Before I came to Fayetteville, I obtained my Ph.D. degree in 
-Texas A&amp;M University. My 
-  specialization fields are Econometrics, applied economics, nonlinear time series analysis, and nonparametrics analysis. &nbsp;</b></font></p>  
-
-
-
-
-
-
- 
-  
-        <p><!--mstheme--></font></td>
-    </tr>
-    <tr>
-      <td width="48%" height="43" bordercolorlight="#FFFFFF" bordercolordark="#FFFFFF"><!--mstheme--><font face="����">
-      <p><!--mstheme--></font></td>
-      <td width="108%" height="43" bordercolorlight="#FFFFFF" bordercolordark="#FFFFFF"><!--mstheme--><font face="����"><!--mstheme--></font></td>
-    </tr>
-    <tr>
-    <td width="100%" height="23" bgcolor="#800000" colspan="3"><!--mstheme--><font face="����">
-    <b><font face="Garamond" size="2" color="#FFFFFF">&copy; 2011 All right       
-    reserved. Updated: October 2015</font></b><!--mstheme--></font></td>
-    </tr>
-  </table><!--mstheme--><font face="����">
-  </center>
+<div class="topbar">
+  <div class="wrap">
+    <a class="brand" href="#top">Jingping Gu</a>
+    <nav aria-label="Sections">
+      <a href="#about">About</a>
+      <a href="#research">Research</a>
+      <a href="#teaching">Teaching</a>
+      <a href="#cv">CV</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
 </div>
 
-<p></p>
+<main class="wrap" id="top">
 
-<!--mstheme--></font></body>
+  <header class="intro">
+    <div class="portrait">
+      <img src="images/gu_3.jpg" alt="Portrait of Jingping Gu" onerror="this.replaceWith(document.createTextNode('JG'))">
+    </div>
+    <div class="intro-text">
+      <h1>Jingping Gu</h1>
+      <p class="role">Associate Professor of Economics</p>
+      <p class="affil">Sam M. Walton College of Business, University of Arkansas</p>
+    </div>
+  </header>
 
+  <section id="about">
+    <h2>About</h2>
+    <div class="content">
+      <p>I am an Associate Professor of Economics in the <a href="http://waltoncollege.uark.edu/econ/default.asp">Department of Economics</a> at the <a href="https://waltoncollege.uark.edu/">Sam M. Walton College of Business</a>, <a href="https://www.uark.edu/home/">University of Arkansas</a>, where I have served on the faculty since 2008. I hold a Ph.D. in Economics from Texas A&amp;M University.</p>
+      <p>My research develops and applies econometric methods, particularly nonparametric and time series techniques, to questions in macroeconomics, international trade, and applied economics. My work has appeared in the <em>Journal of Econometrics</em>, <em>Journal of Development Economics</em>, <em>Econometric Reviews</em>, and <em>Journal of Economic Behavior and Organization</em>, among other journals.</p>
+      <p>I teach econometrics, forecasting, and international trade at the undergraduate and graduate levels, along with Economic Analytics Powered by AI. Before entering academia, I worked in investment banking and research at Bank of China International.</p>
+      <h3>Education</h3>
+      <ul class="plain tight">
+        <li>Ph.D. in Economics, Texas A&amp;M University</li>
+        <li>M.A. in Economics, Peking University (CCER)</li>
+        <li>B.A. in Economics, Renmin University of China</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="research">
+    <h2>Research</h2>
+    <div class="content">
+      <ul class="tags" aria-label="Research fields">
+        <li>Applied econometrics</li>
+        <li>Applied economics</li>
+        <li>Time series analysis</li>
+        <li>Nonparametric analysis</li>
+      </ul>
+      <h3>Publications</h3>
+      <ol class="pubs">
+        <li><span class="yr">2026</span><div><span class="pub-title"><a href="https://doi.org/10.1016/j.jdeveco.2026.103750">Social information, advice and altruistic behavior by underprivileged children: Experimental evidence from Colombia</a></span><span class="pub-meta">Natalia Candelo, Jingping Gu, and Sherry Xin Li. <em>Journal of Development Economics</em>, Volume 181.</span></div></li>
+        <li><span class="yr">2025</span><div><span class="pub-title"><a href="https://doi.org/10.1111/glob.70032">Message in a Bottleneck: Supply Chain Disruptions and Manufacturing Output in the United States</a></span><span class="pub-meta">Raja Kali, Jingping Gu, and Eric Neuyou. <em>Global Networks</em>.</span></div></li>
+        <li><span class="yr">2024</span><div><span class="pub-title"><a href="https://doi.org/10.1002/soej.12741">Estimating Average Treatment Effects With Only Discrete Covariates</a></span><span class="pub-meta">Jingping Gu, Dennis W. Jansen, and Xiaoyu Li. <em>Southern Economic Journal</em>, 1&ndash;24.</span></div></li>
+        <li><span class="yr">2022</span><div><span class="pub-title"><a href="https://doi.org/10.1017/bap.2022.8">Bilateral Tensions, the Trade War, and US&ndash;China Trade Relations</a></span><span class="pub-meta">Ka Zeng, Rob Wells, Jingping Gu, and Austin Wilkins. <em>Business and Politics</em>.</span></div></li>
+        <li><span class="yr">2016</span><div><span class="pub-title">Full Steam Ahead: Firms in the U.S. Economy Adjust Inventory for Changes in Transportation Costs but not the Reverse</span><span class="pub-meta">David Swanson, Brent Williams, Jingping Gu, and Matthew Waller. <em>Transportation Journal</em>, 55(3), 282&ndash;295.</span><span class="badge">Best Paper Award, Transportation Journal, 2016&ndash;2017</span></div></li>
+        <li><span class="yr">2015</span><div><span class="pub-title">Multivariate Local Polynomial Kernel Estimators: Leading Bias and Asymptotic Distribution</span><span class="pub-meta">Jingping Gu, Qi Li, and Jui-Chung Yang. <em>Econometric Reviews</em>, 34, 979&ndash;1010.</span></div></li>
+        <li><span class="yr">2014</span><div><span class="pub-title">Testing cointegration relationship in a semiparametric varying coefficient model</span><span class="pub-meta">Jingping Gu and Zhongwen Liang. <em>Journal of Econometrics</em>, 178, 57&ndash;70.</span></div></li>
+        <li><span class="yr">2013</span><div><span class="pub-title">Fiscal Deficits and Mean Reversion in Real Exchange Rates</span><span class="pub-meta">Jingping Gu, Qi Li, and Jian Yang. <em>Economics Letters</em>, 118(2), 300&ndash;303.</span></div></li>
+        <li><span class="yr">2012</span><div><span class="pub-title">Price increasing competition? Experimental evidence</span><span class="pub-meta">Cary Deck and Jingping Gu. <em>Journal of Economic Behavior and Organization</em>, 84(3), 730&ndash;740.</span></div></li>
+        <li><span class="yr">2012</span><div><span class="pub-title">A semiparametric time trend varying coefficients model: with an application to evaluate credit rationing in the U.S. credit market</span><span class="pub-meta">Qi Gao, Jingping Gu, and Paula Hernandez-Verme. <em>Annals of Economics and Finance</em>, 13(1), 195&ndash;216.</span></div></li>
+        <li><span class="yr">2011</span><div><span class="pub-title">Estimating the average treatment effect based on direct estimation of the conditional treatment effect</span><span class="pub-meta">Jingping Gu, Juan Lin, and Dandan Liu. <em>Advances in Econometrics</em>, Volume 27A, 289&ndash;311.</span></div></li>
+        <li><span class="yr">2011</span><div><span class="pub-title">Nonparametric Panel Estimation of Online Auction Price Process</span><span class="pub-meta">Yu Zhang, Jingping Gu, and Qi Li. <em>Empirical Economics</em>, 40(1), 51&ndash;58.</span></div></li>
+        <li><span class="yr">2009</span><div><span class="pub-title">Some recent development on nonparametric econometrics</span><span class="pub-meta">Zongwu Cai, Jingping Gu, and Qi Li. <em>Advances in Econometrics</em>, Volume 25, 495&ndash;549.</span></div></li>
+        <li><span class="yr">2007</span><div><span class="pub-title">A bootstrap nonparametric significance test</span><span class="pub-meta">Jingping Gu, Dingding Li, and Dandan Liu. <em>Journal of Nonparametric Statistics</em>, 19(6&ndash;8), 215&ndash;230.</span></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="teaching">
+    <h2>Teaching</h2>
+    <div class="content">
+      <p class="sub">Department of Economics, University of Arkansas</p>
+      <ul class="plain tight">
+        <li>Economic Analytics Powered by AI <span class="sub">(undergraduate)</span></li>
+        <li>Forecasting <span class="sub">(undergraduate and master&rsquo;s)</span></li>
+        <li>Introduction to Econometrics <span class="sub">(undergraduate and master&rsquo;s)</span></li>
+        <li>International Trade <span class="sub">(undergraduate)</span></li>
+        <li>Econometrics III: Time Series Analysis <span class="sub">(Ph.D. students)</span></li>
+        <li>China&rsquo;s Foreign Trade and International Order: History, Policy, and Theory <span class="sub">(honors students)</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="cv">
+    <h2>CV</h2>
+    <div class="content">
+      <p><a class="button" href="Gu_CV.pdf">Download CV (PDF)</a></p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="content">
+      <dl class="contact">
+        <dt>Email</dt>
+        <dd><a href="mailto:jgu@walton.uark.edu">jgu@walton.uark.edu</a><br><a href="mailto:jgu@uark.edu">jgu@uark.edu</a></dd>
+        <dt>Phone</dt>
+        <dd><a href="tel:+14795756621">(479) 575-6621</a></dd>
+        <dt>Office</dt>
+        <dd>Business Building 406<br>Department of Economics<br>Sam M. Walton College of Business<br>University of Arkansas<br>Fayetteville, AR 72701</dd>
+      </dl>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2026 Jingping Gu. Last updated November 2026.
+  </footer>
+
+</main>
+</body>
 </html>
-
