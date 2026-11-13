@@ -129,9 +129,10 @@
   h3 { font-family: var(--display); font-weight: 600; font-size: 1.15rem; margin: 26px 0 10px; }
 
   ol.pubs, ul.plain { margin: 0; padding: 0; list-style: none; display: grid; gap: 16px; }
-  ol.pubs li { display: grid; grid-template-columns: 3.2em 1fr; gap: 0 8px; }
-  ol.pubs .yr { color: var(--muted); font-variant-numeric: tabular-nums; font-size: 0.93rem; padding-top: 1px; }
-  .pub-title { font-weight: 500; display: block; }
+  ol.pubs { list-style: disc; padding-left: 1.2em; }
+  ol.pubs li::marker { color: var(--accent); }
+    ol.pubs .yr { color: var(--muted); font-variant-numeric: tabular-nums; font-size: 0.93rem; padding-top: 1px; }
+  .pub-title { font-weight: 500; }
   .pub-meta { color: var(--muted); font-size: 0.95rem; display: block; }
   .pub-meta em { color: var(--ink); }
   .badge {
@@ -217,20 +218,20 @@
       </ul>
       <h3>Publications</h3>
       <ol class="pubs">
-        <li><span class="yr">2026</span><div><span class="pub-title"><a href="https://doi.org/10.1016/j.jdeveco.2026.103750">Social information, advice and altruistic behavior by underprivileged children: Experimental evidence from Colombia</a></span><span class="pub-meta">Natalia Candelo, Jingping Gu, and Sherry Xin Li. <em>Journal of Development Economics</em>, Volume 181.</span></div></li>
-        <li><span class="yr">2025</span><div><span class="pub-title"><a href="https://doi.org/10.1111/glob.70032">Message in a Bottleneck: Supply Chain Disruptions and Manufacturing Output in the United States</a></span><span class="pub-meta">Raja Kali, Jingping Gu, and Eric Neuyou. <em>Global Networks</em>.</span></div></li>
-        <li><span class="yr">2024</span><div><span class="pub-title"><a href="https://doi.org/10.1002/soej.12741">Estimating Average Treatment Effects With Only Discrete Covariates</a></span><span class="pub-meta">Jingping Gu, Dennis W. Jansen, and Xiaoyu Li. <em>Southern Economic Journal</em>, 1&ndash;24.</span></div></li>
-        <li><span class="yr">2022</span><div><span class="pub-title"><a href="https://doi.org/10.1017/bap.2022.8">Bilateral Tensions, the Trade War, and US&ndash;China Trade Relations</a></span><span class="pub-meta">Ka Zeng, Rob Wells, Jingping Gu, and Austin Wilkins. <em>Business and Politics</em>.</span></div></li>
-        <li><span class="yr">2016</span><div><span class="pub-title">Full Steam Ahead: Firms in the U.S. Economy Adjust Inventory for Changes in Transportation Costs but not the Reverse</span><span class="pub-meta">David Swanson, Brent Williams, Jingping Gu, and Matthew Waller. <em>Transportation Journal</em>, 55(3), 282&ndash;295.</span><span class="badge">Best Paper Award, Transportation Journal, 2016&ndash;2017</span></div></li>
-        <li><span class="yr">2015</span><div><span class="pub-title">Multivariate Local Polynomial Kernel Estimators: Leading Bias and Asymptotic Distribution</span><span class="pub-meta">Jingping Gu, Qi Li, and Jui-Chung Yang. <em>Econometric Reviews</em>, 34, 979&ndash;1010.</span></div></li>
-        <li><span class="yr">2014</span><div><span class="pub-title">Testing cointegration relationship in a semiparametric varying coefficient model</span><span class="pub-meta">Jingping Gu and Zhongwen Liang. <em>Journal of Econometrics</em>, 178, 57&ndash;70.</span></div></li>
-        <li><span class="yr">2013</span><div><span class="pub-title">Fiscal Deficits and Mean Reversion in Real Exchange Rates</span><span class="pub-meta">Jingping Gu, Qi Li, and Jian Yang. <em>Economics Letters</em>, 118(2), 300&ndash;303.</span></div></li>
-        <li><span class="yr">2012</span><div><span class="pub-title">Price increasing competition? Experimental evidence</span><span class="pub-meta">Cary Deck and Jingping Gu. <em>Journal of Economic Behavior and Organization</em>, 84(3), 730&ndash;740.</span></div></li>
-        <li><span class="yr">2012</span><div><span class="pub-title">A semiparametric time trend varying coefficients model: with an application to evaluate credit rationing in the U.S. credit market</span><span class="pub-meta">Qi Gao, Jingping Gu, and Paula Hernandez-Verme. <em>Annals of Economics and Finance</em>, 13(1), 195&ndash;216.</span></div></li>
-        <li><span class="yr">2011</span><div><span class="pub-title">Estimating the average treatment effect based on direct estimation of the conditional treatment effect</span><span class="pub-meta">Jingping Gu, Juan Lin, and Dandan Liu. <em>Advances in Econometrics</em>, Volume 27A, 289&ndash;311.</span></div></li>
-        <li><span class="yr">2011</span><div><span class="pub-title">Nonparametric Panel Estimation of Online Auction Price Process</span><span class="pub-meta">Yu Zhang, Jingping Gu, and Qi Li. <em>Empirical Economics</em>, 40(1), 51&ndash;58.</span></div></li>
-        <li><span class="yr">2009</span><div><span class="pub-title">Some recent development on nonparametric econometrics</span><span class="pub-meta">Zongwu Cai, Jingping Gu, and Qi Li. <em>Advances in Econometrics</em>, Volume 25, 495&ndash;549.</span></div></li>
-        <li><span class="yr">2007</span><div><span class="pub-title">A bootstrap nonparametric significance test</span><span class="pub-meta">Jingping Gu, Dingding Li, and Dandan Liu. <em>Journal of Nonparametric Statistics</em>, 19(6&ndash;8), 215&ndash;230.</span></div></li>
+        <li><div>Natalia Candelo, Jingping Gu, and Sherry Xin Li, 2026. <span class="pub-title"><a href="https://doi.org/10.1016/j.jdeveco.2026.103750">Social information, advice and altruistic behavior by underprivileged children: Experimental evidence from Colombia</a></span>. <em>Journal of Development Economics</em>, Volume 181.</div></li>
+        <li><div>Raja Kali, Jingping Gu, and Eric Neuyou, 2025. <span class="pub-title"><a href="https://doi.org/10.1111/glob.70032">Message in a Bottleneck: Supply Chain Disruptions and Manufacturing Output in the United States</a></span>. <em>Global Networks</em>.</div></li>
+        <li><div>Jingping Gu, Dennis W. Jansen, and Xiaoyu Li, 2024. <span class="pub-title"><a href="https://doi.org/10.1002/soej.12741">Estimating Average Treatment Effects With Only Discrete Covariates</a></span>. <em>Southern Economic Journal</em>, 1&ndash;24.</div></li>
+        <li><div>Ka Zeng, Rob Wells, Jingping Gu, and Austin Wilkins, 2022. <span class="pub-title"><a href="https://doi.org/10.1017/bap.2022.8">Bilateral Tensions, the Trade War, and US&ndash;China Trade Relations</a></span>. <em>Business and Politics</em>.</div></li>
+        <li><div>David Swanson, Brent Williams, Jingping Gu, and Matthew Waller, 2016. <span class="pub-title">Full Steam Ahead: Firms in the U.S. Economy Adjust Inventory for Changes in Transportation Costs but not the Reverse</span>. <em>Transportation Journal</em>, 55(3), 282&ndash;295. <br><span class="badge">Best Paper Award, Transportation Journal, 2016&ndash;2017</span></div></li>
+        <li><div>Jingping Gu, Qi Li, and Jui-Chung Yang, 2015. <span class="pub-title">Multivariate Local Polynomial Kernel Estimators: Leading Bias and Asymptotic Distribution</span>. <em>Econometric Reviews</em>, 34, 979&ndash;1010.</div></li>
+        <li><div>Jingping Gu and Zhongwen Liang, 2014. <span class="pub-title">Testing cointegration relationship in a semiparametric varying coefficient model</span>. <em>Journal of Econometrics</em>, 178, 57&ndash;70.</div></li>
+        <li><div>Jingping Gu, Qi Li, and Jian Yang, 2013. <span class="pub-title">Fiscal Deficits and Mean Reversion in Real Exchange Rates</span>. <em>Economics Letters</em>, 118(2), 300&ndash;303.</div></li>
+        <li><div>Cary Deck and Jingping Gu, 2012. <span class="pub-title">Price increasing competition? Experimental evidence</span>. <em>Journal of Economic Behavior and Organization</em>, 84(3), 730&ndash;740.</div></li>
+        <li><div>Qi Gao, Jingping Gu, and Paula Hernandez-Verme, 2012. <span class="pub-title">A semiparametric time trend varying coefficients model: with an application to evaluate credit rationing in the U.S. credit market</span>. <em>Annals of Economics and Finance</em>, 13(1), 195&ndash;216.</div></li>
+        <li><div>Jingping Gu, Juan Lin, and Dandan Liu, 2011. <span class="pub-title">Estimating the average treatment effect based on direct estimation of the conditional treatment effect</span>. <em>Advances in Econometrics</em>, Volume 27A, 289&ndash;311.</div></li>
+        <li><div>Yu Zhang, Jingping Gu, and Qi Li, 2011. <span class="pub-title">Nonparametric Panel Estimation of Online Auction Price Process</span>. <em>Empirical Economics</em>, 40(1), 51&ndash;58.</div></li>
+        <li><div>Zongwu Cai, Jingping Gu, and Qi Li, 2009. <span class="pub-title">Some recent development on nonparametric econometrics</span>. <em>Advances in Econometrics</em>, Volume 25, 495&ndash;549.</div></li>
+        <li><div>Jingping Gu, Dingding Li, and Dandan Liu, 2007. <span class="pub-title">A bootstrap nonparametric significance test</span>. <em>Journal of Nonparametric Statistics</em>, 19(6&ndash;8), 215&ndash;230.</div></li>
       </ol>
     </div>
   </section>
@@ -265,6 +266,8 @@
         <dd><a href="mailto:jgu@walton.uark.edu">jgu@walton.uark.edu</a><br><a href="mailto:jgu@uark.edu">jgu@uark.edu</a></dd>
         <dt>Phone</dt>
         <dd><a href="tel:+14795756621">(479) 575-6621</a></dd>
+        <dt>Website</dt>
+        <dd><a href="https://jingpinggu.github.io/">jingpinggu.github.io</a></dd>
         <dt>Office</dt>
         <dd>Business Building 406<br>Department of Economics<br>Sam M. Walton College of Business<br>University of Arkansas<br>Fayetteville, AR 72701</dd>
       </dl>
